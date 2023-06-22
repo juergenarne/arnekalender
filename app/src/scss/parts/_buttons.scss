@@ -1,0 +1,9 @@
+.btn-outline-primary {
+    --bs-btn-hover-color: $white;
+    --bs-btn-active-color: $white;
+
+    &:hover, 
+    &.active {
+        color: $white;
+    }
+}
