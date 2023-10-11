@@ -1,1 +1,3 @@
 $colors: map-merge($colors, $custom-colors);
+$theme-colors: map-merge($theme-colors, $custom-colors);
+$grid-row-columns:            12;

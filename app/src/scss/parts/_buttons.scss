@@ -1,9 +1,35 @@
+.btn-primary {
+    color: $white;
+    --bs-btn-color: $white;
+    --bs-btn-hover-color: $white;
+    --bs-btn-disabled-color: $white;
+    
+    &:hover, 
+    &:active, 
+    &:focus, 
+    &.active, 
+    &.disabled, 
+    &[disabled] {
+        color: $white;
+        --bs-btn-color: $white;
+        --bs-btn-hover-color: $white;
+        --bs-btn-disabled-color: $white;
+    }
+}
+
 .btn-outline-primary {
     --bs-btn-hover-color: $white;
-    --bs-btn-active-color: $white;
-
+    --bs-btn-disabled-color: $white;
+    
     &:hover, 
-    &.active {
+    &:active, 
+    &:focus, 
+    &.active, 
+    &.disabled, 
+    &[disabled] {
         color: $white;
+        --bs-btn-color: $white;
+        --bs-btn-hover-color: $white;
+        --bs-btn-disabled-color: $white;
     }
 }

@@ -1,0 +1,91 @@
+.week-table {
+
+     > .row {
+        border-left: 1px solid $tertiary;
+
+        .col {
+            
+            & + .col {
+                border-left: none;
+            }
+        }
+    }
+    
+    &-header {
+        border-bottom: 1px solid $tertiary;
+        border-right: 1px solid $tertiary;
+        padding: 1rem;
+        background-color: $gray-100;
+        color: $gray-500;
+        font-weight: 300;
+        min-height: 60px;
+    }
+    
+    &-cell {
+        border-bottom: 1px solid $tertiary;
+        border-right: 1px solid $tertiary;
+        padding: 1rem;
+        min-height: 60px;
+
+        &:hover {
+            background-color: $gray-200;
+        }
+    }
+    
+    .today {
+        > div {
+            font-weight: 700;
+            color: $gray-800;
+        }
+
+        .week-table-header {
+            background-color: darken($gray-100, 3);
+        }
+        
+        .week-table-cell {
+            background-color: darken($gray-100, 1);
+
+            &:hover {
+                background-color: $gray-200;
+            }
+        }
+    }
+
+    .sat {
+        > div {
+            font-weight: 600;
+            color: $red-600;
+        }
+
+        .week-table-header {
+            background-color: lighten($orange-100, 3);
+        }
+
+        .week-table-cell {
+            background-color: lighten($orange-100, 5);
+
+            &:hover {
+                background-color: $orange-100;
+            }
+        }
+    }
+
+    .sun {
+        > div {
+            font-weight: 600;
+            color: $red-600;
+        }
+
+        .week-table-header {
+            background-color: lighten($red-100, 3);
+        }
+
+        .week-table-cell {
+            background-color: lighten($red-100, 5);
+
+            &:hover {
+                background-color: $red-100;
+            }
+        }
+    }
+}
