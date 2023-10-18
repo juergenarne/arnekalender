@@ -1,18 +1,19 @@
 <script lang="ts">
-  import WeekTableColumn from "./WeekTableColumn.svelte";
-  import { strings } from "./strings";
+  import WeekTableColumn from "./WeekTableColumn.svelte"
+  import { settings } from "./settings"
 
-  export let week: Number;
-  export let from: Date;
-  export let to: Date;
+  const display = settings.weekTab.display
 
-  let displayDays = [];
-  let year = from.getFullYear();
-  let month = from.getMonth();
-  let day = from.getDate();
+  export let week: Number
+  export let from: Date
+
+  let displayDays = []
+  let year = from.getFullYear()
+  let month = from.getMonth()
+  let day = from.getDate()
   for (let i = 0; i < 7; i++) {
-    let date = new Date(year, month, day + i, 0, 0, 0, 0);
-    displayDays.push(date);
+    let date = new Date(year, month, day + i, 0, 0, 0, 0)
+    displayDays.push(date)
   }
 </script>
 
@@ -23,10 +24,12 @@
         <div class="col week-table-header">
           KW {week}
         </div>
-        {#each Array(24) as _, i}
-        <div class="col week-table-header">
-            {i.toString().padStart(2, "0")}:00
-        </div>
+        {#each display.hours as _, i}
+          {#if i >= display.min && i <= display.max}
+            <div class="col week-table-header">
+                {i.toString().padStart(2, "0")}:00
+            </div>
+          {/if}
         {/each}
       </div>
     </div>
