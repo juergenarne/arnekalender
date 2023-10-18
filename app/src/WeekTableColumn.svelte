@@ -1,5 +1,6 @@
 <script lang="ts">
   import { strings } from "./strings";
+  import { settings } from "./settings"
 
   export let day: Date;
   const comp1 = new Date(day.getFullYear(), day.getMonth(), day.getDate());
@@ -9,6 +10,12 @@
     today.getMonth(),
     today.getDate()
   );
+
+  const display = {
+    hours: settings.weekTab.display.hours, 
+    min: settings.weekTab.display.min, 
+    max: settings.weekTab.display.max
+  }
 
   let className = "today";
   if (comp1 < comp2) {
@@ -33,17 +40,19 @@
         day.getMonth()
       ]}
     </div>
-    {#each Array(24) as _, i}
-      <div
-        class="col week-table-cell"
-        data-date="{day.getFullYear()}-{day
-          .getMonth()
-          .toString()
-          .padStart(2, '0')}-{day.getDate()}"
-        data-hour="{i.toString().padStart(2, '0')}:00"
-      >
-        &nbsp;
-      </div>
+    {#each display.hours as _, i}
+      {#if i >= display.min && i <= display.max}
+        <div
+          class="col week-table-cell"
+          data-date="{day.getFullYear()}-{day
+            .getMonth()
+            .toString()
+            .padStart(2, '0')}-{day.getDate()}"
+          data-hour="{i.toString().padStart(2, '0')}:00"
+        >
+          &nbsp;
+        </div>
+      {/if}
     {/each}
   </div>
 </div>
