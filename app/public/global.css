@@ -40,6 +40,10 @@ input, button, select, textarea {
 	border-radius: 2px;
 }
 
+.btn-group-sm > button.btn {
+	margin-bottom: 0;
+}
+
 input:disabled {
 	color: #ccc;
 }

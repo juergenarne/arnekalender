@@ -18,6 +18,12 @@
 </script>
 
 <div class="album bg-body-white week-table">
+  <div class="row mx-0 sticky-top">
+    <div class="col col-1 week-table-header">
+      KW {week}
+    </div>
+  </div>
+
   <div class="row mx-0">
     <div class="col col-1">
       <div class="row row-cols-1">

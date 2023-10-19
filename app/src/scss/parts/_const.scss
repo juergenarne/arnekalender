@@ -1,8 +1,10 @@
 $fire: #ff3e00;
+$mist: #dee2e6;
 $primary:  $fire;
-$tertiary: #dee2e6;
+$tertiary: $mist;
 
 $custom-colors: (
     "fire": $fire, 
+    "mist": $mist,
     "tertiary": $tertiary
 );
